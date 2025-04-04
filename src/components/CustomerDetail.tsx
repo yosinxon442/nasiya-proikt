@@ -4,7 +4,7 @@ import { Spin, Alert, Dropdown, Menu, Button, Modal } from "antd";
 import { MoreOutlined, ArrowLeftOutlined, PlusOutlined } from '@ant-design/icons';
 import useDebtor from "../hooks/useDebtor";
 import useDebts from "../hooks/UseDebts";
-import "../styles/components/CustomerDetail.css"; // SCSS emas, CSS
+import "../styles/components/CustomerDetail.css";
 
 const CustomerDetail = () => {
     const { id } = useParams();
@@ -37,8 +37,8 @@ const CustomerDetail = () => {
 
     const handleDelete = async () => {
         Modal.confirm({
-            title: 'Qarzdorni o‘chirishni tasdiqlaysizmi?',
-            content: 'Ushbu qarzdor o‘chirilganda, ma‘lumotlar tiklanmaydi.',
+            title: 'Qarzdorni ochirishni tasdiqlaysizmi?',
+            content: 'Ushbu qarzdor ochirilganda, malumotlar tiklanmaydi.',
             onOk: async () => {
                 const success = await deleteDebtor(id!);
                 if (success) {

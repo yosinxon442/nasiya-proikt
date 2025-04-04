@@ -1,16 +1,14 @@
 import { useEffect, useState } from "react";
 import { SearchOutlined, StarFilled, StarOutlined, UserAddOutlined } from "@ant-design/icons";
-import { Dropdown, MenuProps, Spin, Alert, message } from "antd";
+import { Spin, Alert, message } from "antd";
 import AddDebtorModal from "../components/AddDebtorModal";
 import useDebtor from "../hooks/useDebtor";
-// Oldingi SCSS fayli o‘rniga:
 import "../styles/pages/Customer.css";
 
 import { useNavigate } from "react-router";
 
 const Customers = () => {
   const { debtors, loading, error, addDebtor, refetch } = useDebtor();
-  const [filterVisible, setFilterVisible] = useState(false);
   const [favorites, setFavorites] = useState<{ [key: string]: boolean }>({});
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -27,13 +25,6 @@ const Customers = () => {
     }
   };
 
-
-  // const menuItems: MenuProps["items"] = [
-  //   { key: "1", label: "Mashhur" },
-  //   { key: "2", label: "Yangi mijozlar" },
-  //   { key: "3", label: "Faol mijozlar" },
-  //   { key: "4", label: "No-faol mijozlar" },
-  // ];
 
   const toggleFavorite = (id: string) => {
     setFavorites((prev) => ({ ...prev, [id]: !prev[id] }));
@@ -53,11 +44,6 @@ const Customers = () => {
             <SearchOutlined className="customers__search-icon" />
           </form>
 
-          {/* <Dropdown menu={{ items: menuItems }} trigger={["click"]} open={filterVisible} onOpenChange={setFilterVisible}>
-            <button className="customers__search-btn">
-              <SlidersOutlined className="customers__search-btn__icon" />
-            </button>
-          </Dropdown> */}
         </div>
 
         {loading ? (
