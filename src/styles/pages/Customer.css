@@ -38,6 +38,7 @@
 
 .customers__search-icon {
   position: absolute;
+  top: 11px;
   right: 10px;
   font-size: 18px;
   color: #888;
